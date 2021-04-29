@@ -14,10 +14,13 @@ szpilkę wewnątrz (lub na krawędziach) prostokąta, kartka zostanie
 przebita 1 raz, w pozostałych przypadkach 0 razy *)
 
 val circle : point -> float -> paper
-(** [circle p r] returns a paper representing zwraca kartkę, reprezentującą kółko domknięte o środku
-w punkcie [p] i promieniu [r] *)
+(** [circle p r] returns a paper representing a closed circle
+whose middle point is in the point [p] and of radius equal to [r] *)
 
-val zloz : point -> point -> paper -> paper
+val fold_paper : point -> point -> paper -> paper
+(** [fold_paper p1 p2 p] folds the paper [p] along the line going through
+points [p1] and [p2] (they must be distinct). The paper is folded 
+*)
 (** [zloz p1 p2 k] składa kartkę [k] wzdłuż prostej przechodzącej
 przez punkty [p1] i [p2] (muszą to być różne punkty). Papier jest
 składany w ten sposób, że z prawej strony prostej (patrząc w kierunku
